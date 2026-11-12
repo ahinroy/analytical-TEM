@@ -77,7 +77,7 @@ a {
 .hero {
   padding: 85px 6% 70px;
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: .85fr 1.15fr;
   gap: 7%;
   align-items: center;
 }
@@ -436,7 +436,7 @@ footer a {
 
 .hero-image {
   width: 100%;
-  max-width: 380px;
+  max-width: 540px;
   justify-self: center;
 }
 
@@ -444,7 +444,6 @@ footer a {
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
-  background: #e7eee2;
 }
 
 .hero-image figcaption, .micrograph-image figcaption {
@@ -465,7 +464,7 @@ footer a {
 
 @media (max-width: 700px) {
   .hero-image {
-    max-width: 330px;
+    max-width: 380px;
   }
 
   .micrograph-image img {
@@ -520,7 +519,10 @@ footer a {
 }
 
 .tab-content {
-  padding: 0 20px 20px;
+  padding: 20px;
+  background: #e7eee2;
+  color: var(--ink);
+  border-radius: 0 0 4px 4px;
   font-size: 13px;
   line-height: 1.6;
 }
@@ -541,4 +543,275 @@ footer a {
   .quick-tabs {
     gap: 10px;
   }
+}
+
+.header-title {
+  margin: auto;
+  padding-left: 18px;
+  border-left: 3px solid #91ad6e;
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: clamp(15px, 1.35vw, 19px);
+  font-weight: bold;
+  letter-spacing: .025em;
+  line-height: 1.25;
+}
+
+@media (max-width: 700px) {
+  .header-title {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.hero-facility {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(165px, .6fr);
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-location {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.hero-location a {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .hero-facility {
+    grid-template-columns: minmax(0, 1fr) minmax(130px, .7fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-facility {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Facility location beside the instrument */
+.hero-facility {
+  gap: 28px;
+}
+
+.hero-location {
+  padding: 22px 0 22px 20px;
+  border-left: 2px solid #a8c48a;
+  color: #52655e;
+  font-size: 14px;
+}
+
+.hero-location .eyebrow {
+  margin: 0 0 14px;
+}
+
+.hero-location strong {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.hero-location a {
+  display: inline-block;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #91ad6e;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.hero-location a:hover {
+  border-color: var(--green);
+}
+
+@media (max-width: 700px) {
+  .hero-facility {
+    gap: 14px;
+  }
+
+  .hero-location {
+    padding-left: 14px;
+  }
+}
+
+.location-map {
+  display: block;
+  width: 100%;
+  height: 140px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.tab-content ol, .sample-instructions {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.tab-content li + li {
+  margin-top: 12px;
+}
+
+.sample-instructions .critical-warning {
+  color: #a52a25;
+}
+
+.operator-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 5px 9px;
+  background: var(--green);
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: .14em;
+  line-height: 1.2;
+}
+
+.operator-name {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+/* Keep the footer at the bottom on short pages. */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 80px;
+}
+
+.data-section {
+  padding: 90px 6% 30px;
+}
+
+.data-heading-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.data-heading-row h2 {
+  margin: 12px 0 0;
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-controls button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--green);
+  background: transparent;
+  color: var(--green);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carousel-controls button:hover, .carousel-controls button:focus-visible {
+  background: var(--green);
+  color: white;
+}
+
+.data-carousel {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 12px;
+}
+
+.data-card {
+  flex: 0 0 44%;
+  min-height: 180px;
+  padding: 26px;
+  background: #e7eee2;
+  scroll-snap-align: start;
+}
+
+.data-card span {
+  color: #688078;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.data-card h3 {
+  margin: 32px 0 12px;
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.data-card p {
+  color: #60716b;
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .data-carousel { scroll-behavior: auto; }
+}
+
+@media (max-width: 700px) {
+  .data-card { flex-basis: 82%; }
+}
+
+.data-card {
+  min-height: 260px;
+  border: 1px solid #cfdbcd;
+  border-radius: 8px;
+  background: #edf2e9;
+  box-shadow: 0 8px 24px #172c2b0d;
+}
+
+.data-card {
+  aspect-ratio: 1;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.data-card-image {
+  flex: 1;
+  background: #e7eee2;
+}
+
+.data-card-details {
+  height: 25%;
+  min-height: 64px;
+  border-top: 1px solid #cfdbcd;
+  background: #fff;
+}
+
+.data-card {
+  flex: 0 0 200px;
+}
+
+@media (max-width: 700px) {
+  .data-card { flex-basis: 160px; }
 }
