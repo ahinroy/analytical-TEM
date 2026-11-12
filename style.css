@@ -711,7 +711,7 @@ main {
 
 .data-heading-row h2 {
   margin: 12px 0 0;
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(20px, 2vw, 26px);
 }
 
 .carousel-controls {
@@ -814,4 +814,186 @@ main {
 
 @media (max-width: 700px) {
   .data-card { flex-basis: 160px; }
+}
+
+/* Keep the carousel narrower than its cards so they can roll. */
+.data-carousel {
+  max-width: 418px;
+}
+
+/* Rolling filmstrip */
+.data-carousel {
+  max-width: none;
+  overflow: hidden;
+  padding: 22px 0;
+  background: var(--green);
+  border-top: 8px dotted #cce28c;
+  border-bottom: 8px dotted #cce28c;
+}
+
+.film-track, .film-copy {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+}
+
+.film-track {
+  animation: film-roll 18s linear infinite;
+}
+
+.film-track .data-card {
+  flex: 0 0 200px;
+  width: 200px;
+}
+
+.data-carousel:hover .film-track {
+  animation-play-state: paused;
+}
+
+@keyframes film-roll {
+  to { transform: translateX(calc(-50% - 9px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-track { animation: none; }
+  .data-carousel { overflow-x: auto; }
+}
+
+/* Three-dimensional data carousel */
+.data-carousel {
+  width: min(100%, 600px);
+  max-width: none;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.carousel-stage {
+  position: relative;
+  height: 270px;
+  perspective: 900px;
+}
+
+.carousel-stage .data-card {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transition: transform .8s ease, filter .8s ease, opacity .8s ease;
+  transform: translateX(-50%);
+}
+
+.carousel-stage .data-card[data-position="front"] {
+  transform: translateX(-50%) translateZ(70px);
+  z-index: 3;
+  filter: none;
+  opacity: 1;
+}
+
+.carousel-stage .data-card[data-position="left"] {
+  transform: translateX(-125%) translateZ(-90px) rotateY(24deg) scale(.8);
+  z-index: 1;
+  filter: blur(2px);
+  opacity: .65;
+}
+
+.carousel-stage .data-card[data-position="right"] {
+  transform: translateX(25%) translateZ(-90px) rotateY(-24deg) scale(.8);
+  z-index: 1;
+  filter: blur(2px);
+  opacity: .65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-stage .data-card { transition: none; }
+}
+
+.data-heading-row {
+  justify-content: center;
+  text-align: center;
+}
+
+.data-carousel {
+  margin: 20px auto 0;
+}
+
+.data-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+}
+
+.data-column {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .data-section { grid-template-columns: 1fr; }
+}
+
+.bibliography-box {
+  align-self: center;
+  padding: 32px;
+  background: #e7eee2;
+  border-left: 3px solid #91ad6e;
+}
+
+.bibliography-box h2 {
+  margin: 12px 0 18px;
+  color: var(--green);
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+.bibliography-box p:not(.eyebrow) {
+  color: #52655e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.bibliography-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: var(--green);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.carousel-stage .data-card {
+  transition: none;
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+
+.carousel-stage {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.carousel-stage {
+  height: 360px;
+}
+
+.carousel-stage .data-card {
+  width: 290px;
+  height: 290px;
+}
+
+@media (max-width: 400px) {
+  .carousel-stage { height: 280px; }
+  .carousel-stage .data-card { width: 210px; height: 210px; }
+}
+
+.bibliography-box .eyebrow {
+  color: #a52a25;
+  font-size: 17px;
+}
+
+.acknowledgement-request {
+  color: #a52a25;
+  font-weight: bold;
 }
