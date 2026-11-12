@@ -472,3 +472,73 @@ footer a {
     height: 220px;
   }
 }
+
+/* Expandable facility information */
+.quick-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  padding: 0 6%;
+}
+
+.quick-tabs details {
+  background: var(--green);
+  color: #e5f1d6;
+  border-radius: 4px;
+}
+
+.quick-tabs summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  list-style: none;
+}
+
+.quick-tabs summary::-webkit-details-marker {
+  display: none;
+}
+
+.quick-tabs summary span {
+  font-size: 22px;
+  font-weight: normal;
+  transition: transform .2s ease;
+}
+
+.quick-tabs details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.quick-tabs summary:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: -4px;
+}
+
+.tab-content {
+  padding: 0 20px 20px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.tab-content p {
+  margin: 0 0 12px;
+}
+
+.tab-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .quick-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-tabs {
+    gap: 10px;
+  }
+}
