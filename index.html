@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Analytical TEM facility at the Central Research Facility, IIT Kharagpur.">
     <title>Analytical TEM | CRF IIT Kharagpur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header class="top">
+    <header class="top d-flex align-items-center flex-wrap">
       <a class="brand" href="#top"><span class="mark">CRF</span><span>IIT KHARAGPUR<small>Central Research Facility</small></span></a>
       <div class="header-title">ANALYTICAL TEM FACILITY, IIT KHARAGPUR</div>
     </header>
     <main id="top">
-      <section class="hero">
-        <div>
+      <section class="hero row align-items-center">
+        <div class="col-lg-5">
           <p class="eyebrow">ANALYTICAL TEM. CRF. IIT KHARAGPUR</p>
           <h1>See further.<br><em>Understand more.</em></h1>
           <p class="lead">Analytical electron microscopy for exploring the structure and composition of materials.</p>
         </div>
-        <div class="hero-facility">
+        <div class="hero-facility col-lg-7">
           <figure class="hero-image">
             <img src="images/JEM-F200_en.png" alt="JEOL JEM-F200 electron microscope product image">
           </figure>
@@ -31,45 +32,8 @@
           </div>
         </div>
       </section>
-      <section class="quick-tabs" aria-label="Facility information">
-        <details>
-          <summary>Technical Specs <span aria-hidden="true">+</span></summary>
-          <div class="tab-content">
-            <ul>
-              <li><strong>Instrument:</strong> JEOL JEM-F200 transmission electron microscope</li>
-              <li><strong>Electron source:</strong> Schottky field-emission gun</li>
-              <li><strong>Accelerating voltage:</strong> 20&ndash;200 kV model range; 80 and 200 kV are standard settings, with other voltages optional</li>
-              <li><strong>TEM lattice resolution at 200 kV:</strong> 0.1 nm</li>
-              <li><strong>TEM information limit at 200 kV:</strong> &le; 0.12 nm with Schottky FEG</li>
-              <li><strong>HAADF-STEM resolution at 200 kV:</strong> 0.16 nm with Schottky FEG</li>
-              <li><strong>EDS:</strong> Single-window JEOL EDS</li>
-            </ul>
-            <p>These are company-specified specs. <strong>REAL DATA LARGELY DEPENDS ON SAMPLE QUALITY</strong></p>
-          </div>
-        </details>
-        <details>
-          <summary>INSTRUCTIONS TO USERS FOR SAMPLES <span aria-hidden="true">+</span></summary>
-          <div class="tab-content">
-            <ul class="sample-instructions">
-              <li><strong>Dry samples overnight</strong> before bringing them for microscopy.</li>
-              <li><strong>Notify the facility in advance if a powder sample contains magnetic particles in the micron or sub-micron range.</strong> Magnetic particles can be drawn toward the objective pole piece, <strong class="critical-warning">potentially causing permanent damage to the instrument for which the user will be responsible</strong>. For magnetic samples, we recommend SEM and XRD analysis first to establish particle size, followed by TEM only with appropriate caution.</li>
-              <li>Samples that outgas or produce excessive carbon contamination <strong>will be removed from the column to protect the instrument vacuum</strong>. This requirement is non-negotiable.</li>
-              <li><strong>Do not expect atomic resolution comparable to the GRAND ARM at SATHI or the NeoARM at CRF.</strong> This instrument is intended primarily for analytical work.</li>
-              <li>Sample insertion requires time to pump the load-lock chamber down to a vacuum equivalent to the column. <strong>Please allow the operator sufficient time and do not request that the exchange be rushed.</strong></li>
-              <li>Due to high demand, <strong>slots cannot be rescheduled</strong>.</li>
-            </ul>
-          </div>
-        </details>
-        <details>
-          <summary>Personnel and contact <span aria-hidden="true">+</span></summary>
-          <div class="tab-content">
-            <p><span class="operator-label">OPERATOR</span><br><strong class="operator-name">Anirban Kule</strong><br><a href="mailto:kuleanirban@gmail.com">kuleanirban@gmail.com</a><br>Room 004, Ground Floor<br>Nano-SATHI-CRF Building, Diamond Jubilee Complex<br>IIT Kharagpur</p>
-            <p><span class="operator-label">FACILITATOR</span><br><strong class="operator-name">Ahin Roy</strong><br><a href="mailto:ahin.iitkgp@gmail.com">ahin.iitkgp@gmail.com</a><br>225, Materials Science Centre<br>IIT Kharagpur<br>Ph: <a href="tel:+913222283988">+91-3222-283988</a></p>
-          </div>
-        </details>
-      </section>
-      <section class="data-section" aria-labelledby="data-heading">
-        <div class="data-column">
+      <section class="data-section row align-items-center" aria-labelledby="data-heading">
+        <div class="data-column col-md">
         <div class="data-heading-row">
           <div>
             <p class="eyebrow">FACILITY RESULTS</p>
@@ -84,18 +48,60 @@
           </div>
         </div>
         </div>
-        <aside class="bibliography-box">
+        <aside class="bibliography-box col-md">
           <p class="eyebrow">REQUEST TO USERS</p>
           <p>If your work used the Analytical TEM facility, <span class="acknowledgement-request">you are requested to acknowledge the Analytical TEM Facility, CRF, IIT Kharagpur explicitly</span>.</p>
           <p>Attach your bibliography or include the citation in an email to the facilitator.</p>
-          <a class="bibliography-link" href="mailto:ahin.iitkgp@gmail.com?subject=Analytical%20TEM%20publication%20details">Email bibliography &rarr;</a>
+          <a class="bibliography-link btn" href="mailto:ahin.iitkgp@gmail.com?subject=Analytical%20TEM%20publication%20details">Email bibliography &rarr;</a>
         </aside>
       </section>
+      <section class="quick-tabs row g-3" aria-label="Facility information">
+        <details class="col-md">
+          <summary>Technical Specs <span aria-hidden="true">+</span></summary>
+          <div class="tab-content">
+            <ul>
+              <li><strong>Instrument:</strong> JEOL JEM-F200 transmission electron microscope</li>
+              <li><strong>Electron source:</strong> Schottky field-emission gun</li>
+              <li><strong>Accelerating voltage:</strong> 20&ndash;200 kV model range; 80 and 200 kV are standard settings, with other voltages optional</li>
+              <li><strong>TEM lattice resolution at 200 kV:</strong> 0.1 nm</li>
+              <li><strong>TEM information limit at 200 kV:</strong> &le; 0.12 nm with Schottky FEG</li>
+              <li><strong>HAADF-STEM resolution at 200 kV:</strong> 0.16 nm with Schottky FEG</li>
+              <li><strong>EDS:</strong> Single-window JEOL EDS</li>
+            </ul>
+            <p>These are company-specified specs. <strong>REAL DATA LARGELY DEPENDS ON SAMPLE QUALITY</strong></p>
+          </div>
+        </details>
+        <details class="col-md">
+          <summary>INSTRUCTIONS TO USERS FOR SAMPLES <span aria-hidden="true">+</span></summary>
+          <div class="tab-content">
+            <ul class="sample-instructions">
+              <li><strong>Dry samples overnight</strong> before bringing them for microscopy.</li>
+              <li><strong>Notify the facility in advance if a powder sample contains magnetic particles in the micron or sub-micron range.</strong> Magnetic particles can be drawn toward the objective pole piece, <strong class="critical-warning">potentially causing permanent damage to the instrument for which the user will be responsible</strong>. For magnetic samples, we recommend SEM and XRD analysis first to establish particle size, followed by TEM only with appropriate caution.</li>
+              <li>Samples that outgas or produce excessive carbon contamination <strong>will be removed from the column to protect the instrument vacuum</strong>. This requirement is non-negotiable.</li>
+              <li><strong>Do not expect atomic resolution comparable to the GRAND ARM at SATHI or the NeoARM at CRF.</strong> This instrument is intended primarily for analytical work.</li>
+              <li>Sample insertion requires time to pump the load-lock chamber down to a vacuum equivalent to the column. <strong>Please allow the operator sufficient time and do not request that the exchange be rushed.</strong></li>
+              <li>Due to high demand, <strong>slots cannot be rescheduled</strong>.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="col-md">
+          <summary>Personnel and contact <span aria-hidden="true">+</span></summary>
+          <div class="tab-content">
+            <div class="personnel-entry d-flex align-items-start gap-3"><img class="personnel-photo" src="images/Kule.jpg" alt="Anirban Kule"><p><span class="operator-label">OPERATOR</span><br><strong class="operator-name">Anirban Kule</strong><br><a href="mailto:kuleanirban@gmail.com">kuleanirban@gmail.com</a><br>Room 004, Ground Floor<br>Nano-SATHI-CRF Building, Diamond Jubilee Complex<br>IIT Kharagpur</p></div>
+            <div class="personnel-entry d-flex align-items-start gap-3"><img class="personnel-photo" src="images/ahin.png" alt="Ahin Roy"><p><span class="operator-label">FACILITATOR</span><br><strong class="operator-name">Ahin Roy</strong><br><a href="mailto:ahin.iitkgp@gmail.com">ahin.iitkgp@gmail.com</a><br>225, Materials Science Centre<br>IIT Kharagpur<br>Ph: <a href="tel:+913222283988">+91-3222-283988</a></p></div>
+          </div>
+        </details>
+      </section>
+      <section class="publications-section" id="publications" hidden>
+        <h2>Publications</h2>
+        <iframe id="publications-frame" title="Submit and view publications" loading="lazy"></iframe>
+      </section>
     </main>
-    <footer>
+    <footer class="d-flex justify-content-between flex-wrap">
       <span>CRF · IIT KHARAGPUR</span><span>ANALYTICAL TEM / JEM-F200</span><a href="#top">BACK TO TOP ↑</a>
     </footer>
     <script src="carousel.js" defer></script>
+    <script src="publications.js" defer></script>
   </body>
 </html>
 

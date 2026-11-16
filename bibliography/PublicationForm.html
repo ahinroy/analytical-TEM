@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin: 0; padding: 18px; font: 14px/1.5 Arial, sans-serif; color: #172c2b; background: #e7eee2; }
+    label { display: block; font-weight: bold; margin: 12px 0 4px; }
+    textarea { box-sizing: border-box; width: 100%; min-height: 75px; padding: 8px; font: inherit; }
+    input { max-width: 100%; }
+    button { margin-top: 12px; padding: 10px 16px; background: #234d42; color: white; border: 0; cursor: pointer; }
+    button:disabled { opacity: .6; }
+    #status { min-height: 1.5em; }
+    ol { padding-left: 22px; }
+    li { margin-bottom: 12px; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <form id="form">
+    <label for="file">Upload a BibTeX file (.bib, up to 100 KB)</label>
+    <input id="file" type="file" accept=".bib" required>
+    <label for="citation">Publication citation</label>
+    <textarea id="citation" maxlength="2000" required placeholder="Authors, title, journal, year and DOI"></textarea>
+    <button id="submit" type="submit">Submit for review</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+  <h2>Publications</h2>
+  <p id="list-status">Loading publications...</p>
+  <ol id="publications"></ol>
+  <script>
+    const form = document.querySelector('#form');
+    const status = document.querySelector('#status');
+    const button = document.querySelector('#submit');
+    google.script.run.withSuccessHandler(items => {
+      document.querySelector('#list-status').textContent = items.length ? '' : 'No approved publications yet.';
+      const list = document.querySelector('#publications');
+      items.forEach(citation => { const li = document.createElement('li'); li.textContent = citation; list.appendChild(li); });
+    }).withFailureHandler(() => { document.querySelector('#list-status').textContent = 'Unable to load publications.'; }).getPublications();
+    // Extract common fields as a starting point; users can correct the citation.
+    function bibField(text, name) {
+      const match = new RegExp('\\b' + name + '\\s*=\\s*([{"])', 'i').exec(text);
+      if (!match) return '';
+      const start = match.index + match[0].length;
+      const opening = match[1];
+      let depth = 1;
+      for (let i = start; i < text.length; i++) {
+        if (opening === '{' && text[i] === '{') depth++;
+        if (text[i] === (opening === '{' ? '}' : '"')) depth--;
+        if (depth === 0) return text.slice(start, i).replace(/[{}]/g, '').trim();
+      }
+      return '';
+    }
+    document.querySelector('#file').addEventListener('change', async event => {
+      const file = event.target.files[0];
+      if (!file || file.size > 100000) return;
+      const text = await file.text();
+      const fields = ['author', 'title', 'journal', 'year', 'doi'].map(name => bibField(text, name));
+      if (fields.some(Boolean)) document.querySelector('#citation').value = fields.filter(Boolean).join('. ');
+    });
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const file = document.querySelector('#file').files[0];
+      if (!file || file.size > 100000) { status.textContent = 'Please select a .bib file of up to 100 KB.'; return; }
+      button.disabled = true;
+      status.textContent = 'Submitting...';
+      try {
+        const text = await file.text();
+        google.script.run.withSuccessHandler(message => {
+          status.textContent = message; form.reset(); button.disabled = false;
+        }).withFailureHandler(error => {
+          status.textContent = error.message || 'Submission failed.'; button.disabled = false;
+        }).submitBibliography(file.name, text, document.querySelector('#citation').value);
+      } catch (error) { status.textContent = 'Could not read the file.'; button.disabled = false; }
+    });
+  </script>
+</body>
+</html>

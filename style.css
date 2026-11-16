@@ -1,9 +1,9 @@
 :root {
-  --ink: #172c2b;
-  --green: #234d42;
-  --lime: #cce28c;
-  --cream: #f6f6ef;
-  --muted: #60716b;
+  --ink: #172b40;
+  --green: #174b76;
+  --lime: #bad8ef;
+  --cream: #f4f8fb;
+  --muted: #607487;
 }
 
 * {
@@ -30,7 +30,7 @@ a {
   align-items: center;
   gap: 35px;
   padding: 22px 6%;
-  border-bottom: 1px solid #cad3c7;
+  border-bottom: 1px solid #c9d7e2;
 }
 
 .brand {
@@ -86,7 +86,7 @@ a {
   font-size: 11px;
   font-weight: bold;
   letter-spacing: .18em;
-  color: #688078;
+  color: #607f98;
 }
 
 .hero h1,h2 {
@@ -103,14 +103,14 @@ a {
 
 em {
   font-weight: normal;
-  color: #718d5f;
+  color: #5c89ad;
 }
 
 .lead {
   font-size: 19px;
   line-height: 1.6;
   max-width: 480px;
-  color: #52655e;
+  color: #526b80;
 }
 
 .actions {
@@ -144,7 +144,7 @@ em {
 
 .visual {
   height: 460px;
-  background: #dce8d3;
+  background: #d9eaf5;
   position: relative;
   overflow: hidden;
   display: grid;
@@ -155,12 +155,12 @@ em {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(0deg,transparent 0 39px,#a8bfa522 40px),repeating-linear-gradient(90deg,transparent 0 39px,#a8bfa522 40px);
+  background: repeating-linear-gradient(0deg,transparent 0 39px,#a8c6da22 40px),repeating-linear-gradient(90deg,transparent 0 39px,#a8c6da22 40px);
 }
 
 .orbit {
   position: absolute;
-  border: 1px solid #6f977c;
+  border: 1px solid #6a9cbd;
   border-radius: 50%;
   width: 330px;
   height: 330px;
@@ -169,12 +169,12 @@ em {
 .two {
   width: 400px;
   height: 400px;
-  border-color: #aac5a5;
+  border-color: #a8cadd;
 }
 
 .core {
   border-radius: 50%;
-  background: #28584a;
+  background: #245c85;
   color: white;
   width: 255px;
   height: 255px;
@@ -182,7 +182,7 @@ em {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 60px #638a6b55;
+  box-shadow: 0 20px 60px #6389aa55;
   z-index: 1;
 }
 
@@ -212,7 +212,7 @@ em {
 
 .ticker {
   background: var(--green);
-  color: #e5f1d6;
+  color: #e7f2fa;
   padding: 20px 6%;
   display: flex;
   justify-content: space-between;
@@ -237,7 +237,7 @@ em {
 }
 
 .section-head>p,.visit>div>p:not(.eyebrow) {
-  color: #60716b;
+  color: #607487;
   line-height: 1.8;
   max-width: 490px;
 }
@@ -246,8 +246,8 @@ em {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   margin-top: 55px;
-  border-top: 1px solid #cbd6c9;
-  border-bottom: 1px solid #cbd6c9;
+  border-top: 1px solid #cbdbe6;
+  border-bottom: 1px solid #cbdbe6;
 }
 
 .cards article {
@@ -255,13 +255,13 @@ em {
 }
 
 .cards article+article {
-  border-left: 1px solid #cbd6c9;
+  border-left: 1px solid #cbdbe6;
   padding-left: 30px;
 }
 
 .cards span {
   font-size: 11px;
-  color: #81938a;
+  color: #8199aa;
 }
 
 .cards h3,.location h3 {
@@ -273,7 +273,7 @@ em {
 .cards p,.source,.note {
   font-size: 13px;
   line-height: 1.7;
-  color: #66776e;
+  color: #667e90;
 }
 
 .source {
@@ -281,14 +281,14 @@ em {
 }
 
 .calendar-section {
-  background: #e7eee2;
+  background: #e6f0f7;
 }
 
 .calendar-shell {
   margin-top: 45px;
   min-height: 400px;
   background: white;
-  border: 1px solid #cfdbcd;
+  border: 1px solid #c9dce9;
 }
 
 .calendar-shell iframe {
@@ -305,7 +305,7 @@ em {
 
 .calendar-icon {
   font-size: 38px;
-  color: #718d5f;
+  color: #5c89ad;
 }
 
 .calendar-placeholder h3 {
@@ -315,7 +315,7 @@ em {
 }
 
 .calendar-placeholder p {
-  color: #60716b;
+  color: #607487;
   margin-bottom: 30px;
 }
 
@@ -326,7 +326,7 @@ em {
 }
 
 .location {
-  background: #f0f2e9;
+  background: #edf4f8;
   padding: 40px;
 }
 
@@ -340,13 +340,13 @@ em {
 
 .location hr {
   border: 0;
-  border-top: 1px solid #ccd5c8;
+  border-top: 1px solid #cadbe6;
   margin: 32px 0;
 }
 
 footer {
-  background: #1b3932;
-  color: #dbe8d5;
+  background: #173b5a;
+  color: #dcecf7;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -409,7 +409,7 @@ footer a {
   }
   .cards article+article {
     border-left: 0;
-    border-top: 1px solid #cbd6c9;
+    border-top: 1px solid #cbdbe6;
     padding-left: 0;
   }
   .visit {
@@ -448,7 +448,7 @@ footer a {
 
 .hero-image figcaption, .micrograph-image figcaption {
   padding-top: 8px;
-  color: #60716b;
+  color: #607487;
   font-size: 11px;
 }
 
@@ -459,7 +459,7 @@ footer a {
 .micrograph-image img {
   height: 300px;
   object-fit: contain;
-  background: #e7eee2;
+  background: #e6f0f7;
 }
 
 @media (max-width: 700px) {
@@ -483,7 +483,7 @@ footer a {
 
 .quick-tabs details {
   background: var(--green);
-  color: #e5f1d6;
+  color: #e7f2fa;
   border-radius: 4px;
 }
 
@@ -520,7 +520,7 @@ footer a {
 
 .tab-content {
   padding: 20px;
-  background: #e7eee2;
+  background: #e6f0f7;
   color: var(--ink);
   border-radius: 0 0 4px 4px;
   font-size: 13px;
@@ -548,7 +548,7 @@ footer a {
 .header-title {
   margin: auto;
   padding-left: 18px;
-  border-left: 3px solid #91ad6e;
+  border-left: 3px solid #7aa9cc;
   color: var(--green);
   font-family: Georgia, serif;
   font-size: clamp(15px, 1.35vw, 19px);
@@ -601,8 +601,8 @@ footer a {
 
 .hero-location {
   padding: 22px 0 22px 20px;
-  border-left: 2px solid #a8c48a;
-  color: #52655e;
+  border-left: 2px solid #8fb8d4;
+  color: #526b80;
   font-size: 14px;
 }
 
@@ -623,7 +623,7 @@ footer a {
   display: inline-block;
   margin-top: 8px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #91ad6e;
+  border-bottom: 1px solid #7aa9cc;
   color: var(--green);
   text-decoration: none;
 }
@@ -747,12 +747,12 @@ main {
   flex: 0 0 44%;
   min-height: 180px;
   padding: 26px;
-  background: #e7eee2;
+  background: #e6f0f7;
   scroll-snap-align: start;
 }
 
 .data-card span {
-  color: #688078;
+  color: #607f98;
   font-size: 11px;
   letter-spacing: .12em;
 }
@@ -766,7 +766,7 @@ main {
 }
 
 .data-card p {
-  color: #60716b;
+  color: #607487;
   font-size: 13px;
 }
 
@@ -780,10 +780,10 @@ main {
 
 .data-card {
   min-height: 260px;
-  border: 1px solid #cfdbcd;
+  border: 1px solid #c9dce9;
   border-radius: 8px;
-  background: #edf2e9;
-  box-shadow: 0 8px 24px #172c2b0d;
+  background: #edf5fa;
+  box-shadow: 0 8px 24px #172b400d;
 }
 
 .data-card {
@@ -798,13 +798,13 @@ main {
 
 .data-card-image {
   flex: 1;
-  background: #e7eee2;
+  background: #e6f0f7;
 }
 
 .data-card-details {
   height: 25%;
   min-height: 64px;
-  border-top: 1px solid #cfdbcd;
+  border-top: 1px solid #c9dce9;
   background: #fff;
 }
 
@@ -827,8 +827,8 @@ main {
   overflow: hidden;
   padding: 22px 0;
   background: var(--green);
-  border-top: 8px dotted #cce28c;
-  border-bottom: 8px dotted #cce28c;
+  border-top: 8px dotted #bad8ef;
+  border-bottom: 8px dotted #bad8ef;
 }
 
 .film-track, .film-copy {
@@ -936,8 +936,8 @@ main {
 .bibliography-box {
   align-self: center;
   padding: 32px;
-  background: #e7eee2;
-  border-left: 3px solid #91ad6e;
+  background: #e6f0f7;
+  border-left: 3px solid #7aa9cc;
 }
 
 .bibliography-box h2 {
@@ -947,7 +947,7 @@ main {
 }
 
 .bibliography-box p:not(.eyebrow) {
-  color: #52655e;
+  color: #526b80;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -996,4 +996,61 @@ main {
 .acknowledgement-request {
   color: #a52a25;
   font-weight: bold;
+}
+
+.publications-section { padding: 20px 6% 40px; }
+.publications-section h2 { font-size: 28px; }
+#publications-frame { display: block; width: 100%; height: 650px; border: 0; }
+
+/* Bootstrap provides the responsive grid; these rules retain the facility's visual identity. */
+.hero, .quick-tabs, .data-section {
+  display: flex;
+  margin-left: 0;
+  margin-right: 0;
+}
+.hero {
+  gap: 0;
+}
+.quick-tabs, .data-section {
+  gap: 16px;
+}
+.quick-tabs > details, .data-section > * {
+  min-width: 0;
+}
+.quick-tabs > details {
+  padding: 0;
+}
+.data-section > * {
+  padding-left: 0;
+  padding-right: 0;
+}
+.data-section > .bibliography-box {
+  padding: 32px;
+}
+.bibliography-link:hover, .bibliography-link:focus-visible {
+  background: #103a5d;
+  color: #fff;
+}
+@media (max-width: 767.98px) {
+  .quick-tabs > details, .data-section > * {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
+
+/* Personnel portraits */
+.personnel-entry + .personnel-entry {
+  margin-top: 22px;
+}
+.personnel-entry p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.personnel-photo {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
 }
