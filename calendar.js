@@ -1,16 +1,9 @@
-// Set this to the ID of a dedicated, public, privacy-reviewed facility calendar.
-// Leave blank until it has been configured. Never use your personal calendar.
-const PUBLIC_CALENDAR_ID = '';
-if (PUBLIC_CALENDAR_ID) {
+// Paste the deployed Apps Script web app URL here after deployment.
+const SLOT_CALENDAR_URL = 'https://script.google.com/macros/s/AKfycbzBZhXSvP2as8RuTnlehIy0Q6qIqVMPuXZbgPsXyK-VyvxBR1AJSw_alUbL_JMPn0gtYg/exec';
+if (SLOT_CALENDAR_URL) {
   const frame = document.createElement('iframe');
-  const params = new URLSearchParams({
-    src: PUBLIC_CALENDAR_ID,
-    ctz: 'Asia/Kolkata',
-    showTitle: '0',
-    showPrint: '0',
-  });
-  frame.src = 'https://calendar.google.com/calendar/embed?' + params;
-  frame.title = 'Analytical TEM facility calendar';
+  frame.src = SLOT_CALENDAR_URL;
+  frame.title = 'Analytical TEM allotted slots calendar';
   frame.loading = 'lazy';
   document.getElementById('calendar-container').replaceChildren(frame);
 }
