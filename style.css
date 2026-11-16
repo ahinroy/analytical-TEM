@@ -1087,3 +1087,5 @@ main {
 .carousel-stage .data-card { box-shadow: 0 12px 32px rgba(18, 48, 42, .18); }
 @media (max-width: 700px) { .data-section { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .carousel-arrow { transition: none; } }
+
+.data-card .data-card-details .pt-highlight { color: #b00020; font-size: inherit; letter-spacing: normal; }
