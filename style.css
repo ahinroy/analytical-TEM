@@ -1054,3 +1054,36 @@ main {
   object-position: center top;
   border-radius: 50%;
 }
+
+/* Sample image and caption within each carousel card. */
+.carousel-stage { height: 520px; }
+.carousel-stage .data-card { height: auto; min-height: 455px; }
+.data-card-image { flex: none; width: 100%; aspect-ratio: 1; }
+.data-card-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.data-card-details { height: auto; min-height: 165px; padding: 10px 12px; color: #333; }
+.data-card .data-card-details p { margin: 0 0 7px; color: #333; font-size: 12px; line-height: 1.35; }
+.data-card-details strong { color: #800000; }
+.data-card-details a { color: inherit; text-decoration: underline; }
+@media (max-width: 400px) {
+  .carousel-stage { height: 465px; }
+  .carousel-stage .data-card { height: auto; min-height: 410px; }
+  .data-card-details { min-height: 200px; }
+  .data-card .data-card-details p { font-size: 11px; }
+}
+
+.carousel-controls { justify-content: center; margin-top: 8px; }
+
+/* Give facility data more room and place navigation beside the gallery. */
+.data-section { grid-template-columns: minmax(0, 1.45fr) minmax(260px, 1fr); }
+.carousel-shell { position: relative; display: flex; align-items: center; gap: 8px; }
+.carousel-shell .data-carousel { flex: 1; min-width: 0; margin: 20px auto 0; }
+.carousel-arrow {
+  flex: 0 0 42px; border: 0; padding: 8px 0; background: transparent;
+  color: var(--green); font-size: 32px; line-height: 1; cursor: pointer;
+  transition: color .2s, transform .2s;
+}
+.carousel-arrow:hover, .carousel-arrow:focus-visible { color: #800000; transform: scale(1.2); }
+.carousel-arrow:focus-visible { outline: 2px solid #800000; outline-offset: 3px; border-radius: 4px; }
+.carousel-stage .data-card { box-shadow: 0 12px 32px rgba(18, 48, 42, .18); }
+@media (max-width: 700px) { .data-section { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .carousel-arrow { transition: none; } }

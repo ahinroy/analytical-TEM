@@ -1,10 +1,6 @@
 const stage = document.querySelector('.carousel-stage');
 const cards = [...stage.querySelectorAll('.data-card')];
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let angle = 0;
-let lastTime = 0;
-let frame;
-let paused = false;
 
 function renderCarousel() {
   const cardWidth = cards[0].offsetWidth;
@@ -21,21 +17,13 @@ function renderCarousel() {
   });
 }
 
-function animate(time) {
-  if (lastTime && !paused && !reducedMotion.matches) {
-    angle += Math.min(time - lastTime, 50) * 0.00035;
-  }
-  lastTime = time;
-  renderCarousel();
-  frame = requestAnimationFrame(animate);
-}
-
-stage.addEventListener('mouseenter', () => { paused = true; });
-stage.addEventListener('mouseleave', () => { paused = false; });
-window.addEventListener('resize', renderCarousel);
-reducedMotion.addEventListener('change', () => {
-  if (reducedMotion.matches) angle = 0;
+document.querySelector('#carousel-prev').addEventListener('click', () => {
+  angle += 2 * Math.PI / cards.length;
   renderCarousel();
 });
+document.querySelector('#carousel-next').addEventListener('click', () => {
+  angle -= 2 * Math.PI / cards.length;
+  renderCarousel();
+});
+window.addEventListener('resize', renderCarousel);
 renderCarousel();
-frame = requestAnimationFrame(animate);
